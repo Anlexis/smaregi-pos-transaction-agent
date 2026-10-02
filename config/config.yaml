@@ -1,0 +1,11 @@
+# Runtime parameters — loaded by AgentRegistry, passed as Graph(config=...).
+# Separate from config/agent.yaml (the static manifest).
+
+max_retry: 3
+timeout_s: 30
+
+# Smaregi POS REST API connector settings. Forwarded to the inner workflow
+# graph by SmaregiWorkflowGraphNode._parent_config() under
+# config["configurable"]; CallSmaregiApiNode builds its client from these.
+smaregi:
+  base_url: "https://api.smaregi.jp/pos"
